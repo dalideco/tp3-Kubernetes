@@ -18,6 +18,8 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
+                    sleep(10800)
+
                     def imageNameWithTag = "dalideco/${env.DOCKER_IMAGE}:latest"
                     docker.build(imageNameWithTag)
                 }
